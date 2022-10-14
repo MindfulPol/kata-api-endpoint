@@ -32,6 +32,8 @@ Automatic setup:
 This command will build and run the docker containers, install composer dependencies and load fixtures into the RDBMS.
 (Might take a while since it also waits for mysql to be ready).
 
+`http://localhost:8080/products`
+
 Alternatively you can run:
 
 ```
