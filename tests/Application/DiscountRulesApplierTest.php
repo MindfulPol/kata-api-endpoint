@@ -16,9 +16,9 @@ class DiscountRulesApplierTest extends TestCase
         $products = $discountRulesApplier->execute($products);
         foreach ($products as $product) {
             if ($product->category !== 'boots') {
-                $this->assertEquals(500, $product->price->final);
+                $this->assertEquals(500, $product->getPrice()->getFinal());
             } else {
-                $this->assertEquals(350, $product->price->final);
+                $this->assertEquals(350, $product->getPrice()->getFinal());
             }
         }
     }
