@@ -11,14 +11,16 @@ class DiscountRulesApplierTest extends TestCase
 
     public function testShouldApplyThirtyPercentDiscountToProductsInBootCategory()
     {
+        $originalProductMotherPrice = 500;
+        $priceWithThirtyPercentApplied = 350;
         $discountRulesApplier = new DiscountRulesApplier();
         $products = ProductMother::createMultipleProductsPricedAsFiveHundred();
         $products = $discountRulesApplier->execute($products);
         foreach ($products as $product) {
             if ($product->category !== 'boots') {
-                $this->assertEquals(500, $product->getPrice()->getFinal());
+                $this->assertEquals($originalProductMotherPrice, $product->getPrice()->getFinal());
             } else {
-                $this->assertEquals(350, $product->getPrice()->getFinal());
+                $this->assertEquals($priceWithThirtyPercentApplied, $product->getPrice()->getFinal());
             }
         }
     }
