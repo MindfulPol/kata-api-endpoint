@@ -121,3 +121,18 @@ Efficiency of our endpoint could be improved. As of this iteration, the discount
 For example, if we were to iterate our project, we could improve it by moving the service applying the discounts elsewhere. For example once a discount is created/product is saved.
 
 We would be able to achieve it relatively fast given that the code applying the discounts isn't coupled. It's a service recieving an array of products that will return the same array with the discounts applied.
+
+## 🧪 Testing
+
+Following the Outside in TDD I was 'forced' to create Acceptance and Unit tests. You can run them with:
+`make test`.
+```
+PHPUnit 9.5.25 #StandWithUkraine
+
+Testing 
+..........                                                        10 / 10 (100%)
+
+Time: 00:01.778, Memory: 28.00 MB
+
+OK (10 tests, 26 assertions)
+```
