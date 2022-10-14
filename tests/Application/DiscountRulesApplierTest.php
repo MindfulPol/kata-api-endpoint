@@ -13,7 +13,6 @@ class DiscountRulesApplierTest extends TestCase
     {
         $discountRulesApplier = new DiscountRulesApplier();
         $products = ProductMother::createMultipleProductsPricedAsFiveHundred();
-        $_GET['omg'] = true;
         $products = $discountRulesApplier->execute($products);
         foreach ($products as $product) {
             if ($product->category !== 'boots') {
