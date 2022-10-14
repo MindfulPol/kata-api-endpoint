@@ -1,0 +1,4 @@
+api_product_list:
+    path: /products
+    controller: App\Infrastructure\Entrypoint\Api\GetProductListController
+    methods: ['GET']
