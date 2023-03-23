@@ -7,15 +7,12 @@ use App\Domain\Repository\ProductRepositoryInterface;
 
 class GetProductListUseCase
 {
-    private ProductRepositoryInterface $productRepository;
-    private QueryStringParamDigestor $queryStringParamDigestor;
-    private int $resultLimit = 5;
-
-    public function __construct(ProductRepositoryInterface $productRepository, QueryStringParamDigestor $queryStringParamDigestor)
-    {
-        $this->productRepository = $productRepository;
-        $this->queryStringParamDigestor = $queryStringParamDigestor;
-    }
+    
+    public function __construct(
+         private ProductRepositoryInterface $productRepository,
+         private QueryStringParamDigestor $queryStringParamDigestor,
+         private int $resultLimit = 5,
+    ) {}
 
     public function execute(?string $queryStringParams = ''): array
     {
